@@ -1,0 +1,44 @@
+ALGORITHM Checkpoint_problem1
+VAR
+    arr1 : ARRAY_OF INTEGER[];
+    arr2 : ARRAY_OF INTEGER[];
+    i, j, sum : INTEGER;
+    found : BOOLEAN;
+BEGIN
+// fill the arrays 
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        Write("Fill the array 1")
+        Read(arr1[i])
+    END_FOR
+    FOR i FROM 0 TO arr2.length-1 STEP 1  DO
+        Write("Fill the array 2")
+        Read(arr2[i])
+    END_FOR
+END
+// comparing an element from arr1 to elements of arr 2 and calculate the sum
+FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+    found :false,
+        FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+            IF (arr1[i]=arr2[j]) THEN
+                found:= true
+            END_IF            
+        END_FOR
+        IF (found=false) THEN
+          sum = sum + arr1[i]
+        END_IF
+END_FOR
+// Compairing each element of arr 2 to elements of arr1
+  FOR i FROM 0 TO arr2.length-1 STEP 1  DO
+    found :false,
+        FOR j FROM 0 TO arr1.length-1 STEP 1  DO
+            IF (arr2[i]=arr1[j]) THEN
+                found:= true
+            END_IF            
+        END_FOR
+        IF (found=false) THEN
+          sum = sum + arr2[i]
+        END_IF
+    END_FOR
+// Displaying the solution
+Write("The sum is", sum)
+END

@@ -1,0 +1,52 @@
+// Writing a procedure named: dot_product that calculates the dot product of v1 and v2
+PROCEDURE dot_product(v1,v2:ARRAY_OF INTEGER[])
+  VAR
+    i:INTEGER :=0 ;
+    ps:INTEGER :=0;
+  BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+         ps = ps+v1[i]*v2[i];
+        END_FOR
+  END
+
+ALGORITHM Dot Product
+VAR
+   v1 : ARRAY_OF INTEGER[];
+    v2 : ARRAY_OF INTEGER[];
+    result:=0;  
+BEGIN
+ dot_product(v1,v2)=result
+   IF (result=0) THEN
+        return("the two vectors are orthogonal");
+       ELSE
+        return("the two vectors are not orthogonal");
+       END_IF 
+END
+//  Using a function 
+
+    FUNCTION  dot_productFun(v1,v2:ARRAY_OF INTEGER[]) : INTEGER 
+    VAR
+
+    i:INTEGER :=0 ;
+    ps:INTEGER :=0;
+    BEGIN
+        FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+         ps = ps+v1[i]*v2[i];
+
+        END_FOR
+       return ps
+       
+    END
+
+ ALGORITHM Dot Product1
+VAR
+    v1 : ARRAY_OF INTEGER[];
+    v2 : ARRAY_OF INTEGER[];
+BEGIN 
+  
+   IF (dot_productFun(arr1,arr2)=0) THEN
+        return("The two vectors are orthogonal");
+       ELSE
+        return("The two vectors are not orthogonal");
+       END_IF 
+END
